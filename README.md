@@ -44,4 +44,5 @@ Instrucciones.
         - Test a 1 Input.
         - Test a 1 Boton.
 
-13.- Hay que configurar el proyecto para ser desplegado en Heroku.-
+13.- La Configuración del proyecto para ser desplegado en Heroku:
+     https://francisco-skate-park.herokuapp.com/
