@@ -1,0 +1,61 @@
+<h1>Skate Park</h1>
+
+<div class="py-4">
+  <h2>Registro</h2>
+  <hr class="w-50" />
+  <form method="post">
+    <div class="form-group row w-50 m-auto">
+      <div class="form-group col-12 col-sm-6">
+        <label>Email</label>
+        <input name="email" class="form-control m-auto" />
+      </div>
+      <div class="form-group col-12 col-sm-6">
+        <label>Nombre</label>
+        <input name="nombre" class="form-control m-auto" />
+      </div>
+      <div class="form-group col-12 col-sm-6">
+        <label>Password</label>
+        <input name="password" type="password" class="form-control m-auto" onchange="verificar()" id="pass1" />
+      </div>
+      <div class="form-group col-12 col-sm-6">
+        <label>Repita la password</label>
+        <input type="password" class="form-control m-auto" onchange="verificar()" id="pass2" />
+      </div>
+      <div class="form-group col-12 col-sm-6">
+        <label>Años de experiencia</label>
+        <input name="anos_experiencia" class="form-control m-auto" />
+      </div>
+      <div class="form-group col-12 col-sm-6">
+        <label>Especialidad</label>
+        <input name="especialidad" class="form-control m-auto" />
+      </div>
+      <div class="form-group col-12 col-sm-12">
+        <label>Foto de perfil</label>
+        <input name='foto' type="file" />
+      </div>
+    </div>
+    <div class="alert alert-warning d-none" role="alert" id="msg">
+      Las contraseñas no coinciden
+    </div>
+    <button id="btn" class="btn btn-info mb-3">Registrarme</button>
+    <p><a href="/iniciar-sesion"> Iniciar sesión</a></p>
+  </form>
+</div>
+<script>
+  const pass1 = document.querySelector("#pass1")
+  const pass2 = document.querySelector("#pass2")
+  const msg = document.querySelector("#msg")
+  const btn = document.querySelector("#btn")
+
+  const verificar = () => {
+    const eq = pass1.value == pass2.value
+    if (eq) {
+      msg.classList.add("d-none")
+    }
+    else {
+      msg.classList.remove("d-none")
+    }
+
+    btn.disabled = !eq;
+  }
+</script>
