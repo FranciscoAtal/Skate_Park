@@ -1,7 +1,12 @@
 require('dotenv').config()
 const { Client, Pool } = require('pg')
 
-const pool = new Pool()
+const pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+})
 
 const listar = async () => {
     const res = await pool.query('SELECT * from skaters')
